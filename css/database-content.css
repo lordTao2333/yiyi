@@ -1,0 +1,63 @@
+.container{
+				display: grid;
+				width: 100%;
+				height: auto;
+				position: relative;
+				grid-column-gap:0px;
+				grid-row-gap:0px;
+				grid-template-columns:100px 2% 1fr 2%;
+				grid-template-rows: 1fr;
+				grid-template-areas:
+				"aaside . content ."
+				
+				;
+				
+			}
+			.items11{
+				grid-area:aaside;
+			}
+			.items22{
+				grid-area:content;
+				background:rgba(104,156,151,0.2) ;
+			}
+			.articals{
+				margin: 0 auto;
+				margin-top: 25px;
+				margin-bottom: 25px;
+				width: 90%;
+				height: 80px;
+				position: relative;
+				background:rgba(104,156,151,0.9);
+				border-top-right-radius: 40px;
+				border-bottom-left-radius: 40px;
+				box-shadow: 2px 1px 5px 0 rgba(0, 0, 0, 0.4);
+			}
+			.title-a{
+				width: 80%;
+				height: 100%;
+				padding: 20px 0px 0px 40px;
+			}
+			.title-a a{
+				text-decoration: none;
+				color: #F5FFFA;
+			}
+			.title-a a p{
+				text-decoration: none;//这个方法是真的智障 我脑残写的啥玩意
+				color: #F5FFFA;
+				font-size: 22px;
+				font-weight: 500;
+				
+				padding: 5px;
+			}
+			
+			.writer {
+				position: absolute;
+				margin: 5px 15px;
+				bottom: 10px;
+				right: 20px;
+				
+			}
+			.writer p{
+				font-size: 17px;
+				color: #F5FFFA;
+			}

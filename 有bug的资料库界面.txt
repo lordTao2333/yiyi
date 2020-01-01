@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>获取您想要的</title>
+		<base href="database.html">
+		<base target="_self">
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+		<link rel="stylesheet" href="css/lanrenzhi.css">
+		
+		<link rel="stylesheet" type="text/css" href="css/danmu.css">
+		
+	</head>
+	<body>
+		<header>
+		<div class="head">
+			<div class="navs">
+				
+				<div class="nav-left">
+					
+					<a href="index.html">
+						<img src="img/yiyi2.png" alt="Logo" width="80px" height="80px" >
+					</a>
+				</div>
+				<div class="items">
+				<a href="doctor.html">签约医生</a>
+				</div>
+				<div class="items">
+					<a href="head.html">资料站</a>
+				</div>
+			</div>
+		</div>
+		<div class="searcher ">
+			<form action="" method="get" target="_blank">
+				<input type="text" placeholder="Search...">
+				<div class="search"></div>
+			</form>
+		</div>
+		<div class="user ">
+			<div class="navs1">
+				
+				<div class="items1">
+					
+						<!--登录trigger-overlay-->
+						
+						<button id="" type="button">
+						<a href="dl-normal.html" target="_blank">登录</a>
+						</button>
+				</div>
+				<div class="nav-right">
+					
+					<a href="head.html">
+						<img src="img/人物头像.png" alt="user" width="40px" height="auto" >
+					</a>
+				</div>
+				
+			</div>
+			
+		</div>
+		</header>
+		<div class="meny">
+		  <h3>科室总览</h3>
+		  <ul>
+		    <li><a href="head.html">内科</a></li>
+		    <li><a href="head.html">外科</a></li>
+		    <li><a href="head.html">儿科</a></li>
+		    <li><a href="head.html">妇科</a></li>
+		    <li><a href="head.html">神经科</a></li>
+		    <li><a href="head.html">耳鼻喉科</a></li>
+		    <li><a href="head.html">口腔科</a></li>
+		    <li><a href="head.html">泌尿科</a></li>
+		    <li><a href="head.html">骨科</a></li>
+			<li><a href="head.html">创伤科</a></li>
+			<li><a href="head.html">内分泌科</a></li>
+			<li><a href="head.html">皮肤科</a></li>
+			<li><a href="head.html">营养部</a></li>
+		  </ul>
+		</div>
+		<div class="meny-arrow"></div>
+		<div class="contents">
+			       <div class="screen">
+						<div class="landscape"></div>
+							<div class="filter"></div>
+							<canvas id="canvas"></canvas>
+							<div class="send">
+								<div class="input clearfix">
+								<input type="text" class="text">
+								<div class="btn">发送弹幕</div>
+								</div>
+							</div>
+							<div class="s_show">
+								<div class="magictime twisterInUp">欢迎来到医意，您的健康小助手</div>
+								<div class="magictime twisterInUp">资料库有丰富的信息，快去探寻吧</div>
+								<div class="magictime twisterInUp">鼠标移至左边就是细分的导航栏哦</div>
+								<div class="magictime twisterInUp">欢迎来到医意，您的健康小助手</div>
+								<div class="magictime twisterInUp">资料库有丰富的信息，快去探寻吧</div>
+								<div class="magictime twisterInUp">鼠标移至左边就是细分的导航栏哦</div>
+								<div class="magictime twisterInUp">欢迎来到医意，您的健康小助手</div>
+								<div class="magictime twisterInUp">资料库有丰富的信息，快去探寻吧</div>
+								<div class="magictime twisterInUp">鼠标移至左边就是细分的导航栏哦</div>
+								<div class="magictime twisterInUp">医意太好用啦，收藏啦啦啦啦啦啦啦</div>
+								<div class="magictime twisterInUp">哇哇这是什么神仙网页，太方便啦</div>
+								<div class="magictime twisterInUp">好用！！！</div>
+								<div class="magictime twisterInUp">有些内容没有呀</div>
+								<div class="magictime twisterInUp">没找到到想要的</div>
+								<div class="magictime twisterInUp">不错不错，简单便捷，一下子找到了</div>
+								<div class="magictime twisterInUp">这个弹幕好好玩啊</div>
+								<div class="magictime twisterInUp">广告位招租+18810898683微信同号</div>
+								<div class="magictime twisterInUp">看了半天原来左边有隐藏信息蛤蛤蛤</div>
+								<div class="magictime twisterInUp">-本网站立足于美腻尖合众国，宣誓对地球人负责-</div>
+								<div class="magictime twisterInUp">早睡早起身体棒昂</div>
+								<div class="magictime twisterInUp">我是隔壁的泰山抓住爱情的藤曼听我说~~~奥~~~</div>
+							</div>
+					</div>
+		</div>
+		<footer>
+			
+		</footer>
+		<script src="js/meny.min.js"></script>
+		
+		<script src="js/danmu.js"></script>
+		<script src="js/danmu-mukuaihua.js"></script>
+		
+		
+		<script>
+			var meny = Meny.create({
+				menuElement: document.querySelector( '.meny' ),
+				contentsElement: document.querySelector( '.contents' ),
+				position: Meny.getQuery().p || 'left',
+				height: 200,
+				width: 260,
+				threshold: 40,
+				mouse: true,
+				touch: true
+			});
+			if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+				var contents = document.querySelector( '.contents' );
+				contents.style.padding = '0px';
+				contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+			}
+		</script>
+	</body>
+</html>

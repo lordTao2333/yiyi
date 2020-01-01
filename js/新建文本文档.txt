@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+		
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.container{
+				display: grid;
+				width: 100%;
+				height: auto;
+				grid-columns-gap:0px;
+				grid-row-gap:0px;
+				grid-template-columns:repeat(8,1fr);
+				grid-template-rows: 80px 600px 420px 420px 200px;
+				grid-template-areas:
+				"begin begin begin s s s u u"
+				"a a a a a a a a"
+				"b b c c d d d d"
+				"e e e e f f g g"
+				"h h h h h h h h"
+				;
+				
+			}
+			.head{
+				background: #99CC33;
+				grid-area:begin;
+				position: relative;
+				
+				}
+			.head .navs{
+				width: 100%;
+				
+				display: flex;
+				justify-content: flex-start;
+				align-items:center;
+				position: absolute;
+				top: 25%;
+				transition: translateY(-50%);
+			}
+			.navs .nav-left{
+				width: 40px;
+				height: 40px;
+				margin-left: 30px;
+				margin-right: 10px;
+			}
+			.navs .items{
+				margin: 0px;
+				font-size: 20px;
+				font-weight: 700;
+				color: #228B22;
+				margin-left: 20px;
+			}
+			
+			.user{
+				background: #99CC33;
+				grid-area:u
+				
+				
+			}
+			.user .navs1{
+				width: 100%;
+				
+				display: flex;
+				justify-content: flex-start;
+				align-items:flex-start;
+				position: relative;
+				
+			
+			}
+			.navs1 .nav-right{
+				
+				margin:0px;
+				
+				position: absolute;
+				top: 20px;
+				right:20px;
+			}
+			.navs1 .items1{
+				margin: 0px;
+				font-size: 12px;
+				font-weight: 300;
+				color: #228B22;
+				margin-right: 0px;
+				position: absolute;
+				top: 20px;
+				right:70px;
+				
+			}
+			button {
+				border: none;
+				border-radius: 4px;
+				padding: 10px 15px;
+				outline: none;
+				background: #228B22;
+				color: #9ACD32;
+				font-weight: 700;
+			}
+			.searcher{
+				background: #99CC33;
+				grid-area:s;
+				position: relative;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.searcher .search {
+			  position: absolute;
+			  margin: auto;
+			  top: 0;
+			  right: 0;
+			  bottom: 0;
+			  left: 0;
+			  width: 60px;
+			  height: 60px;
+			  background: #228B22;
+			  border-radius: 50%;
+			  transition: all 1s;
+			  z-index: 4;
+			  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+			}
+			.searcher .search:hover {
+			  cursor: pointer;
+			}
+			.searcher .search::before {
+			  content: "";
+			  position: absolute;
+			  margin: auto;
+			  top: 22px;
+			  right: 0;
+			  bottom: 0;
+			  left: 22px;
+			  width: 12px;
+			  height: 2px;
+			  background: white;
+			  transform: rotate(45deg);
+			  transition: all .5s;
+			}
+			.searcher .search::after {
+			  content: "";
+			  position: absolute;
+			  margin: auto;
+			  top: -5px;
+			  right: 0;
+			  bottom: 0;
+			  left: -5px;
+			  width: 25px;
+			  height: 25px;
+			  border-radius: 50%;
+			  border: 2px solid white;
+			  transition: all .5s;
+			}
+			.searcher input {
+			  font-family: 'Inconsolata', monospace;
+			  position: absolute;
+			  margin: auto;
+			  top: 0;
+			  right: 0;
+			  bottom: 0;
+			  left: 0;
+			  width: 50px;
+			  height: 50px;
+			  outline: none;
+			  border: none;
+			  background: #32CD32;
+			  color: white;
+			  text-shadow: 0 0 5px #32CD32;
+			  padding: 0 80px 0 20px;
+			  border-radius: 30px;
+			  box-shadow: 0 0 5px 0 #32CD32, 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+			  transition: all 1s;
+			  opacity: 0;
+			  z-index: 5;
+			  font-weight: bolder;
+			  letter-spacing: 0.1em;
+			}
+			.searcher input:hover {
+			  cursor: pointer;
+			}
+			.searcher input:focus {
+			  width: 350px;
+			  opacity: 1;
+			  cursor: text;
+			}
+			.searcher input:focus ~ .search {
+			  right: -390px;
+			  background: #228B22;
+			  z-index: 6;
+			}
+			.searcher input:focus ~ .search::before {
+			  top: 0;
+			  left: 0;
+			  width: 25px;
+			}
+			.searcher input:focus ~ .search::after {
+			  top: 0;
+			  left: 0;
+			  width: 25px;
+			  height: 2px;
+			  border: none;
+			  background: white;
+			  border-radius: 0%;
+			  transform: rotate(-45deg);
+			}
+			.searcher input::placeholder {
+			  color: white;
+			  opacity: 0.5;
+			  font-weight: bolder;
+			}
+			
+			.item-1{
+				
+				background: #228B22;
+				grid-area:a;
+				
+			}
+			.item-2{
+				background: #5BC2CE;
+				grid-area:b;
+				
+			}
+			.item-3{
+				background: #70AC76;
+				grid-area:c;
+				
+			}
+			.item-4{
+				background: #ECD82C;
+				grid-area:d;
+				
+			}
+			.item-5{
+				background: #FFEBCD;
+				grid-area:e;
+				
+				
+			}
+			.item-6{
+				background: #3C3F45;
+				grid-area:f;
+				
+				
+			}
+			.item-7{
+				background: #5BC2CE;
+				grid-area:g;
+				
+				
+			}
+			.item-8{
+				background: #99CC33;
+				grid-area:h;
+				
+			}
+			body{
+				
+				background-size: 200px 200px;
+				background-repeat: repeat;
+				background-color: blue;
+			    margin:0;
+				padding:0;
+				opacity:0.9;
+			
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="head">
+				<div class="navs">
+					
+					<div class="nav-left">
+						<img src="" alt="Logo">
+						<a ></a>
+					</div>
+					<div class="items">签约医院</div>
+					<div class="items">资料站</div>
+				</div>
+			</div>
+			<div class="searcher ">
+				<input type="text" placeholder="Search...">
+				<div class="search"></div>
+			</div>
+			<div class="user ">
+				<div class="navs1">
+					
+					<div class="items1">
+						
+							<!--登录trigger-overlay-->
+							<button id="" type="button">登录</button>
+						
+					</div>
+					<div class="nav-right">
+						<img src="img/人物头像.png" alt="Logo" width="40px" height="auto">
+						<a ></a>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="item-1 ">
+				
+			</div>
+			<div class="item-2 ">
+				
+			</div>
+			<div class="item-3 ">
+				
+			</div>
+			<div class="item-4 ">
+				
+			</div>
+			<div class="item-5 ">
+				
+				
+			</div>
+			<div class="item-6 ">
+				
+			</div>
+			<div class="item-7 ">
+				
+			</div>
+			<div class="item-8 ">
+				
+				
+			</div>
+		</div>
+	
+		
+	</body>
+</html>
